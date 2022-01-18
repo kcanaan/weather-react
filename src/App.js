@@ -18,11 +18,8 @@ function App() {
         <Temperature />
         <small>
           {" "}
-          <a href="https://github.com/kcanaan/weather-react" target="_blank">
-            {" "}
-            Coded
-          </a>{" "}
-          by Kiara Canaan{" "}
+          <a href="https://github.com/kcanaan/weather-react"> Coded</a> by Kiara
+          Canaan{" "}
         </small>
       </div>
     </div>

@@ -16,7 +16,14 @@ function App() {
         <Location />
         <Condition />
         <Temperature />
-        <small> Coded by Kiara Canaan </small>
+        <small>
+          {" "}
+          <a href="https://github.com/kcanaan/weather-react" target="_blank">
+            {" "}
+            Coded
+          </a>{" "}
+          by Kiara Canaan{" "}
+        </small>
       </div>
     </div>
   );

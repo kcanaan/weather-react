@@ -1,0 +1,19 @@
+.currentTemperature {
+  text-align: center;
+  text-shadow: #3f4752 1px 0 5px;
+  font-size: 50px;
+}
+.units {
+  font-size: 17px;
+  position: relative;
+  bottom: 27px;
+  left: 2px;
+}
+.high-low {
+  text-align: center;
+  font-size: 25px;
+}
+.humidity-and-wind {
+  text-align: center;
+  font-size: 25px;
+}

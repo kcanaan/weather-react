@@ -2,14 +2,12 @@ import React from "react";
 import "./Weather.css";
 import "./WeatherInfo";
 import WeatherInfo from "./WeatherInfo";
-import Search from "./Search";
 
 export default function Weather() {
   return (
     <div className="Weather">
       <div className="WeatherBoarder">
-        <Search />
-        <WeatherInfo />
+        <WeatherInfo defaultCity="Atlanta" />
       </div>
       <small>
         {" "}

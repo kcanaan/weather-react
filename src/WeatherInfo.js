@@ -1,19 +1,15 @@
 import React, { useState } from "react";
-import Search from "./Search";
 import CuteDate from "./CuteDate";
-import "./Search.css";
-import "./Location.css";
-import "./Condition.css";
 import "./Temperature.css";
 import axios from "axios";
 
 export default function WeatherInfo() {
-  const [ready, setReady] = useState(false);
-  const [weatherData, setWeatherData] = useState({});
+  const [weatherData, setWeatherData] = useState({ ready: false });
   function handleResponse(response) {
     console.log(response.data);
-    setReady(true);
+
     setWeatherData({
+      ready: true,
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       date: new Date(response.data.dt * 1000),
@@ -25,10 +21,9 @@ export default function WeatherInfo() {
     });
   }
 
-  if (ready) {
+  if (weatherData.ready) {
     return (
       <div>
-        <Search />
         <div className="Location">
           <h1>Atlanta, Georgia</h1>
           <h2>

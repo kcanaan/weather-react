@@ -1,27 +1,11 @@
-import Search from "./Search";
-import "./Search.css";
-import Location from "./Location";
-import "./Location.css";
-import Condition from "./Condition";
-import "./Condition.css";
-import Temperature from "./Temperature";
-import "./Temperature.css";
 import "./App.css";
+import Weather from "./Weather";
+import "./Weather.css";
 
 function App() {
   return (
     <div className="App">
-      <div className="AppBoarder">
-        <Search />
-        <Location />
-        <Condition />
-        <Temperature />
-        <small>
-          {" "}
-          <a href="https://github.com/kcanaan/weather-react"> Coded</a> by Kiara
-          Canaan{" "}
-        </small>
-      </div>
+      <Weather />
     </div>
   );
 }

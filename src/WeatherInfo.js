@@ -59,14 +59,16 @@ export default function WeatherInfo(props) {
             <CuteDate date={weatherData.date} />
           </h2>
         </div>
-        <div className="Condition" className="text-capitalize">
-          <h3>{weatherData.condition}</h3>
-          <img
-            className="current-icon"
-            src={weatherData.icon}
-            id="icon"
-            alt={weatherData.condition}
-          />
+        <div className="Condition">
+          <div className="text-capitalize">
+            <h3>{weatherData.condition}</h3>
+            <img
+              className="current-icon"
+              src={weatherData.icon}
+              id="icon"
+              alt={weatherData.condition}
+            />
+          </div>
         </div>
         <div className="Temperature">
           <span className="currentTemperature">

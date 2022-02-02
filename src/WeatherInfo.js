@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Search from "./Search";
+import CuteDate from "./CuteDate";
 import "./Search.css";
 import "./Location.css";
 import "./Condition.css";
@@ -15,7 +16,7 @@ export default function WeatherInfo() {
     setWeatherData({
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
-      date: "Wednesday",
+      date: new Date(response.data.dt * 1000),
       icon: "https://openweathermap.org/img/wn/10d@2x.png",
       condition: response.data.weather[0].description,
       wind: response.data.wind.speed,
@@ -30,7 +31,9 @@ export default function WeatherInfo() {
         <Search />
         <div className="Location">
           <h1>Atlanta, Georgia</h1>
-          <h2>{weatherData.date}</h2>
+          <h2>
+            <CuteDate date={weatherData.date} />
+          </h2>
         </div>
         <div className="Condition">
           <h3>{weatherData.condition}</h3>

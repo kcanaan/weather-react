@@ -15,7 +15,7 @@ export default function WeatherInfo(props) {
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       date: new Date(response.data.dt * 1000),
-      icon: "https://openweathermap.org/img/wn/10d@2x.png",
+      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       condition: response.data.weather[0].description,
       wind: response.data.wind.speed,
       high: response.data.main.temp_max,

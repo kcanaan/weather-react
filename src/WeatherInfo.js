@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import CuteDate from "./CuteDate";
 import "./Temperature.css";
 import "./Search.css";
+import "./UnitConversion";
 import axios from "axios";
+import UnitCoverstion from "./UnitConversion";
 
 export default function WeatherInfo(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -15,7 +17,7 @@ export default function WeatherInfo(props) {
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       date: new Date(response.data.dt * 1000),
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       condition: response.data.weather[0].description,
       wind: response.data.wind.speed,
       high: response.data.main.temp_max,
@@ -71,14 +73,11 @@ export default function WeatherInfo(props) {
           </div>
         </div>
         <div className="Temperature">
-          <span className="currentTemperature">
-            {Math.round(weatherData.temperature)}
-          </span>
-          <span className="units">°F|°C</span>
-          <div className="high-low">
-            <span className="temp-high">H:{Math.round(weatherData.high)}°</span>{" "}
-            <span className="temp-low"> L:{Math.round(weatherData.low)}°</span>
-          </div>
+          <UnitCoverstion
+            fahrenheit={weatherData.temperature}
+            max={weatherData.high}
+            min={weatherData.low}
+          />
           <div className="humidity-and-wind">
             {" "}
             <span className="humidity">

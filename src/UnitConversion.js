@@ -34,8 +34,8 @@ export default function UnitCoverstion(props) {
           </a>
         </span>
         <div className="high-low">
-          <span className="temp-high">H:{props.max}°</span>{" "}
-          <span className="temp-low"> L:{props.min}°</span>
+          <span className="temp-high">H:{Math.round(props.max)}°</span>{" "}
+          <span className="temp-low"> L:{Math.round(props.min)}°</span>
         </div>
       </div>
     );
